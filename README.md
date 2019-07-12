@@ -26,10 +26,10 @@ It does the exact function as distinct() in sql, it returns a list of only disti
 this function group and count needed CSV records (columns_to_group_by argument) that meet the selection requirement (where arguement) 
 it's the equivalent of the sql query as bellow
 ```
-select "columns_to_group_by " count(*) 
+select "columns_to_group_by", count(*) 
 from "csv_file" 
 where 
-group by " columns_to_group_by "
+group by "columns_to_group_by"
 ```
 
 ### Validate method
@@ -40,11 +40,11 @@ An example of validation rules could be as follow:
 
 ```
 validation_rules =  [
-                        {'row_index':0, 'condition':'is_numeric'}, # product_id must be nemeric
-                        {'row_index':1, 'condition':'length_greater_than', 'compare_to':1}, #product_name must be at least one char length
-                        {'row_index':2, 'condition':'is_numeric'}, # aisle_id must be numeric
-                        {'row_index':3, 'condition':'is_numeric'}, # department_id must be numeric
-                    ]
+	    {'row_index':0, 'condition':'is_numeric'}, # product_id must be nemeric
+	    {'row_index':1, 'condition':'length_greater_than', 'compare_to':1}, #product_name must be at least one char length
+	    {'row_index':2, 'condition':'is_numeric'}, # aisle_id must be numeric
+	    {'row_index':3, 'condition':'is_numeric'}, # department_id must be numeric
+]
 ```
 
 ### csv_spliting_style method
