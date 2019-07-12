@@ -58,20 +58,20 @@ validation_rules =  [
 
 ## Used algorithm
 
-### step 1
+### Step 1
 load products ids with their departments ids  and index it by the product_id 
 products_indexed_by_id  = simple_csv.indexing(columns_to_include=[0,3], column_to_index=0)
 the data structure is a dictionary because this information is requested for each order product. 
 
-### step 2
+### Step 2
 read orders, group them by product_id and count them 
     orders_by_products_id   = simple_csv.group_counting(columns_to_group_by=[1])
 	
-### step 3
+### Step 3
 read orders that meet the requirement to be as first order, group them by product_id and count them.
     first_orders_by_product_id   = simple_csv.group_counting(columns_to_group_by=[1,3], where={'column_index':1, 'column_value':0})
 
-### step 4
+### Step 4
 PROCESS DEPARTMENT STATS
 ```
 for each orders_by_products_id
@@ -80,5 +80,5 @@ for each orders_by_products_id
 	process number of first orders
 ```
 
-### step 5
+### Step 5
 sorting the result by department_id and saving it to a csv file
