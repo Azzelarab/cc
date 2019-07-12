@@ -5,11 +5,10 @@ construction method has three arguments: csv_file, delimiter and skip_header
 
 ## METHODS
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### read method: 
 
-has two arguments that deal with the needed performances 
+Has two arguments that deal with the needed performances 
 columns_to_include : sometimes we don't need to load and process all fields of a CSV file and "columns_to_include" argument helps on getting what we only need from the CSV file 
 read_style: this argument could be 'line_by_line' or 'entire_file'
 this  'line_by_line'  value helps to solve the issue of "out of memory error" in case the file is too big to be loaded into the memory (RAM) or just because loading the whole file doesn't help improving performances.
