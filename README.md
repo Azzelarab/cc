@@ -2,6 +2,9 @@
 
 After thinking about how this mini project could be done effectively, I have created a class called SumpleCSV that has simple functionalities to process CSV files, its functionalities are inspired from SQL language.
 construction method has three arguments: csv_file, delimiter and skip_header
+```
+the code is tested on python 3.5.6 version and is able to produce the the exact output report.csv file
+```
 
 ## CLASS METHODS
 
