@@ -16,18 +16,11 @@ the 'entire_file' value, load the entire file into the memory and that could be 
 
 ### indexing method
 
-the indexing function plays a performance role in which it transforms a CSV file into a dictionary  with "column_to_index" as indexes and "column_to_index" as a list of content
+The indexing function plays a performance role in which it transforms a CSV file into a dictionary  with "column_to_index" as indexes and "columnS_to_index" as a list of content
 
 ### distinct_values method
 
-it does the exact function as distinct() in sql, it returns a list of only distinct (different) values of the desired "column_to_distinct" argument
-
-
-### csv_spliting_style method
-since we are not allowed to import any library, I wrote a simple function that split a CSV record. it takes into consideration the used delimiter and ignores it inside double quotes.
-
-### save_list_to_csv_file
-a simple method that saves a list into a CSV file.
+It does the exact function as distinct() in sql, it returns a list of only distinct (different) values of the desired "column_to_distinct" argument
 
 ### group_counting method
 this function group and count needed CSV records (columns_to_group_by argument) that meet the selection requirement (where arguement) 
@@ -54,20 +47,26 @@ validation_rules =  [
                     ]
 ```
 
+### csv_spliting_style method
+Since we are not allowed to import any library, I wrote a simple function that split a CSV record. it takes into consideration the used delimiter and ignores it inside double quotes.
+
+### save_list_to_csv_file
+A simple method that saves a list into a CSV file.
+
 
 ## Used algorithm
 
 ### Step 1
-load products ids with their departments ids  and index it by the product_id 
+Load products ids with their departments ids  and index it by the product_id 
 products_indexed_by_id  = simple_csv.indexing(columns_to_include=[0,3], column_to_index=0)
 the data structure is a dictionary because this information is requested for each order product. 
 
 ### Step 2
-read orders, group them by product_id and count them 
+Read orders, group them by product_id and count them 
     orders_by_products_id   = simple_csv.group_counting(columns_to_group_by=[1])
 	
 ### Step 3
-read orders that meet the requirement to be as first order, group them by product_id and count them.
+Read orders that meet the first order requirement, group them by product_id and count them.
     first_orders_by_product_id   = simple_csv.group_counting(columns_to_group_by=[1,3], where={'column_index':1, 'column_value':0})
 
 ### Step 4
